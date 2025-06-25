@@ -1,5 +1,6 @@
 package com.dev.warehousemanagement.controller;
 
+import com.dev.warehousemanagement.dto.response.ProductInventoryJPQLResponse;
 import com.dev.warehousemanagement.dto.response.ProductInventoryResponse;
 import com.dev.warehousemanagement.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping("/getAllProductInventories")
-    public ResponseEntity<Page<ProductInventoryResponse>> getAllProductInventories() {
+    public ResponseEntity<Page<ProductInventoryJPQLResponse>> getAllProductInventories() {
         return ResponseEntity.ok(productService.getAllProductInventory());
     }
 

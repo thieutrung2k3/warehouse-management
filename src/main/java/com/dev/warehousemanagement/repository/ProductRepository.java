@@ -1,5 +1,6 @@
 package com.dev.warehousemanagement.repository;
 
+import com.dev.warehousemanagement.dto.response.ProductInventoryJPQLResponse;
 import com.dev.warehousemanagement.dto.response.ProductInventoryResponse;
 import com.dev.warehousemanagement.entity.Product;
 import org.springframework.data.domain.Page;
@@ -23,7 +24,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             GROUP BY c.name, p.name
             ORDER BY SUM(i.totalValue) DESC
             """)
-    Page<ProductInventoryResponse> getAllProductsInventory(Pageable pageable);
+    Page<ProductInventoryJPQLResponse> getAllProductsInventory(Pageable pageable);
 
     @Query(value = """
             SELECT

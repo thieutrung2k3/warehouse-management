@@ -1,5 +1,6 @@
 package com.dev.warehousemanagement.service;
 
+import com.dev.warehousemanagement.dto.response.ProductInventoryJPQLResponse;
 import com.dev.warehousemanagement.dto.response.ProductInventoryResponse;
 import com.dev.warehousemanagement.repository.*;
 import jakarta.transaction.Transactional;
@@ -31,7 +32,7 @@ public class ProductService {
         warehouseRepository.findAll();
     }
 
-    public Page<ProductInventoryResponse> getAllProductInventory(){
+    public Page<ProductInventoryJPQLResponse> getAllProductInventory(){
         return productRepository.getAllProductsInventory(PageRequest.of(0, 100));
     }
 
