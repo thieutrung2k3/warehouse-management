@@ -1,9 +1,15 @@
 package com.dev.warehousemanagement.service;
 
+import com.dev.warehousemanagement.dto.response.ProductInventoryResponse;
 import com.dev.warehousemanagement.repository.*;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -25,5 +31,12 @@ public class ProductService {
         warehouseRepository.findAll();
     }
 
+    public Page<ProductInventoryResponse> getAllProductInventory(){
+        return productRepository.getAllProductsInventory(PageRequest.of(0, 100));
+    }
+
+    public Page<ProductInventoryResponse> getAllProductsInventoryWithNative(){
+        return productRepository.getAllProductsInventoryWithNative(PageRequest.of(0, 100));
+    }
 
 }
