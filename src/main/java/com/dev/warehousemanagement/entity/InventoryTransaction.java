@@ -173,7 +173,7 @@ public class InventoryTransaction {
     private BigDecimal humidityAtTransaction;
 
     @Column(name = "quality_check_passed")
-    private Boolean qualityCheckPassed = true;
+    private Integer qualityCheckPassed;
 
     @Column(name = "quality_check_notes", columnDefinition = "TEXT")
     private String qualityCheckNotes;
@@ -188,9 +188,10 @@ public class InventoryTransaction {
     private String glAccount;
 
     @Column(name = "is_reversed")
-    private Boolean isReversed = false;
+    private Integer isReversed;
 
-    private Long reversedByTransaction;
+
+//    private Long reversedByTransaction;
 
     @Column(name = "reversal_reason", length = 200)
     private String reversalReason;

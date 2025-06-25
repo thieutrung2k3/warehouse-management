@@ -148,8 +148,8 @@ public class Warehouse {
 
     @OneToMany(mappedBy = "warehouse", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<InventoryTransaction> inventoryTransactions ;
-    @OneToMany(mappedBy = "from_warehouse_id", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "fromWarehouse", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<InventoryTransaction> fromWarehouses ;
-    @OneToMany(mappedBy = "to_warehouse_id", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "toWarehouse", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<InventoryTransaction> toWarehouse ;
 }
